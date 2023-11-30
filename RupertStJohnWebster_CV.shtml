@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<title>Rupert St John Webster's CV</title>
+		<meta name=vs_showGrid content="False">
+		<META NAME="Keywords" Content="information systems and management consultancy Rupert St John Webster">
+		<META NAME="Description" Content="Webster Systems is an information systems consultancy specialising in fixed income business analysis, development and support on Wintel and Lintel platforms over Oracle and SQL Server databases using C, C++, C#, SQL, PL/SQL, T-SQL, Java, VB, ASP, ADO, COM, Visual Studio, Vi, SCCS, Perl, HTML, VBScript, Javascript, UNIX Script, Windows Script.">
+<base target="_self">
+<link rel="stylesheet" href="base.css">
+	</head>
+
+	<body>
+
+		<!--#exec cgi="cgi-bin/cvcount.cgi"-->
+
+<center>
+<img border="0" src="image.gif" align="middle" alt="The strategy of information"></img>
+</center>
+<p>
+
+		<B><P ALIGN="center">RUPERT ST JOHN WEBSTER</B>
+		<BR><CENTER><a href="mailto:rupert@webstersystems.co.uk"><b>rupert@webstersystems.co.uk</b></a><br><b>(07740) 289100</b></CENTER>
+<CENTER><p><img src = "images/rupert_st_john_webster.jpg" alt="Rupert St John Webster"></CENTER>
+
+<B><U><p>Vision and Culture</p></B></U>
+<p>
+<strong>Close to the customer:</strong> If your customers succeed, so do you. Let them drive strategy.
+<br><strong>Actions add value:</strong> Be experimental, work in stages, manage risks, but get on with it.
+<br><strong>Performance culture:</strong> Identify the scorecards and metrics that determine performance.
+<br><strong>Ethical vision:</strong> The Golden Rule for all customers, competitors, stakeholders and employers.
+<br><strong>Think differently:</strong> You can't do any better if you are the same as everyone else.
+<br><strong>Seek insight:</strong> Insight reduces risk, and drives performance and sales.
+<br><strong>Work intensely:</strong> Because intensity separates the best from the average.
+<br><strong>Enjoy your work</strong>
+
+</p>
+<B><U><P>Professional Summary</B></U></P>
+<p>
+An experienced FX/FI Systems Engineer with a track record of delivering next generation trading platform solutions through design, development, testing & production support. Key strengths include: analysing complex business requirements & implementing high performing solutions that drive efficiency & cost savings; supporting Object Oriented Programming developers (particularly C, C# & Java) to develop, enhance & maintain stable trading platforms; designing robust production schedules to deliver risk-free front office maintenance changes; and engaging key stakeholders including front office, middle office & development teams to ensure superior solution delivery.
+<p align=justify>
+
+<B><U><P>Code Base / Familiar technologies</B></U></P>
+<p>
+Windows; UNIX; Linux; SQL; SQL Server; Oracle; Sybase; RV; TCP; Gemfire; Sonic MQ; Apache Tomcat; FIX; XML; Excel; Visual Studio; Eclipse; Java; JavaScript; C; C#; PL/SQL; Pro*C; HTML; ASP.NET; Perl; TOAD; Visio; WinForms; WebForms; Vi; VIM; SCCS
+<p align=justify>
+
+<B><U><P>Key Skills</B></U></P>
+
+<ul>
+<li>FX / FI Pricing, Orders, Dealing & Hedging
+<li>FX / FI Production Support
+<li>FX / FI Business Analysis
+<li>System Design & Development
+<li>Object Oriented Programming
+<li>Risk Free FX Change Management
+<li>Project / Team Management
+<li>Stakeholder Management
+<li>Data Flow Diagrams / Rich Pictures
+<li>Consultancy Grade Documentation
+</ul>
+<p align=justify>
+
+<B><U><P>Current Role</B></U></P>
+
+<ul>
+	<li><b>2007 to date: Freelance Contractor (Webster Technology Systems)</b>
+	Since 2007, have operated as a professional Contractor, completing assignments for clients such as BNP Paribas and Nomura. Below is a list of assignments completed over this period as well as larger projects from perm career (in no particular order and not all are listed).
+</ul>
+
+	<B><U><P>Assignment / Project Portfolio</B></U></P>
+
+	<ul>
+		<li><b>BNP Paribas: FX Architecture: Business Analyst (5 months)</b><br>
+	BNPP’s cash FX trading architecture was ageing. Engaged to identify top 5 use cases for delivery of next generation front office FX architecture, and to assist with project management; Assessed current architecture state by developing data flow models for cash FX operations, and wrote C# and Excel production database monitoring applications to scope changes in current system load. Then I engaged with senior FX business stakeholders using one to one workshops, CATWOE and use case analysis. I successfully identified the top 5 use cases for the FX business and presented them, with gap analysis study, to BNPP’s FX architecture team.
+	<p>
+		<li><b>BNP Paribas: FX Architecture: Developer (2 months)</b><br>
+	BNPP’s FX architecture team had designed new communication protocols for the bank’s next generation FX trading platform. A requirement was to improve the HTTP endpoints “discovery” front end GUI, across all environments, so endpoint connectivity could be better searched, tested and monitored by FX development and FX support. Using Eclipse, C# and ASP.Net I rewrote the required functionality to capture and present the results of discovery searches on internal webpages, and successfully tested and obtained sign off for the new code’s release into staging and production.
+	<p>
+		<li><b>Nomura: FI Production Support: Business Analyst (2 months)</b><br>
+	Nomura’s next generation credit and rates trading platform required production support sign off before go-live. Engaged to deliver SLA documents. Interviewed key stakeholder groups to define project scope and to target documentation; Developed data and process models for the next generation platform; Ran gap analysis between current state and acceptance criteria for production support SLA’s. Successfully delivered consultancy-grade documentation, including runbooks, system administration guides and user guides for the Nomura rates business.
+	<p>
+		<li><b>FXall: Lead FX Production Support: Engineer (33 months)</b><br>
+	FXall needed a production support engineer to maintain 24 hour resilience for its FX trading platform, for both server side (Java) processes and FXall (Java) GUIs. Selected to perform this role, to monitor production platforms and maintain the London runbook. I used Putty to access UNIX & Linux distributed hosts; performed system application and trading checks; monitored bank and client connectivity to RFQ, streaming engines, and all post trade engines; proactively resolved any technical issues; used C# to create monitoring tools for running processes and data flows throughout system; recruited & trained additional team member; engaged with key banks and key clients to resolve any operational issues across all FXall interfaces or FXall GUI performance; performed system changes. I supported FX spot, forward, swaps, NDF, SSP, and block deals, streaming and RFQ pricing and execution; and later connectivity, pricing and execution of international money market deposits and loans. Successfully delivered proactive support methodology resulting in enhanced trading relationships with providers and clients.
+	<p>
+		<li><b>BNP Paribas: Risk Free Change Management: Business Analyst (9 months)</b><br>
+	BNPP’s FX changes process was causing an unacceptably high level of outages. Selected to improve the management of changes from development into production. Engaged with senior management team to define current risks; moved Changes Reporting System from Remedy to JIRA and implemented several new FX changes risk assessment analysis techniques. Ran daily FX change meetings on behalf of FX production support; improved the reporting of proposed changes to the FX business; and assisted with implementation and testing of FX changes. Successfully introduced risk free environment for FX changes, which BNPP adopted, enabling a ten-fold increase in the FX systems production changes delivered each week.
+	<p>
+		<li><b>BNP Paribas: Front Office FX Trading Platform: Production Support (26 months)</b><br>
+	BNPP’s FX sales and trading teams’ required FX applications support. Engaged to support the bank’s FX production environment. Ran daily system checks through FX applications and ECN’s (EBS, Reuters, FXall, Currenex, 360T); identified and tracked incidents; investigated trading databases; followed incidents through to resolution; used C# and SQL to proactively develop and maintain production monitoring tools; implemented daily and weekend change requests; ran production tests for changes; updated global system checks. Executed weekend maintenance tasks and weekend system checks before Singapore market open. Successfully supported FX algo framework (pricing, hedging and prop trading with PnL alerting) which increased tenfold the number of strategies delivered per week. Successfully supported operations for FX pricing and distribution (RFQ and streaming), FX order management and execution (manual and auto), FX deal capture (spots, forwards, swaps, NDFs, SSPs, Blocks), FX position keeping and risk management (crossing, de-crossing, auto and manual hedging) supporting server side and GUI applications with which BNPP increased their FX market share.
+	<p>
+		<li><b>BNP Paribas: FX Cash Trader & Sales Desktop Upgrade: Project Manager (6 months)</b><br>
+	BNPP’s FX sales and trading teams’ reliance on 32-bit Windows XP impacted business performance. FX trading applications often performed slowly (at the most critical times) when late trade notifications would cost money for the FX trading desks. Engaged to evaluate the feasibility of 64-bit Windows 7. Assessed all FX sales and trading applications performance on Windows XP as a benchmark; created prototype 64-bit Windows 7 environment; tested all FX applications with Windows 7; presented results to OS team; subsequently led implementation across the bank’s FX business in London, New York and Singapore. Successfully delivered a robust 64-bit Windows 7 platform, significantly enhancing speed & reliability of FX applications.
+	<p>
+		<li><b>ABN AMRO: Equities / Fixed Income post trade platform: Production Support (6 months)</b><br>
+	ABN required technical expertise for the RIMS FX and equities trade enrichment and settlement systems. Selected to support electronic trade enrichment processes, monitor FX and equities trade flows, ensure feed connectivity, and monitor CREST and SWIFT settlement operations. Followed daily runbooks and system checks; monitored trade processing software components; pro-actively mitigated, investigated and resolved post trade transaction outages; ran and delivered daily position keeping and risk reports. Successfully delivered pro-active operational support for the bank’s post trading and settlement platform.
+	<p>
+		<li><b>Misys Securities Trading Systems: Pro*C / PLSQL: Developer (10 months)</b><br>
+	Misys needed development support for the RIMS fixed income electronic trading platform. Engaged to capture and resolve client software problems. Replicated software issues and identified root causes; recoded software components using Oracle Pro*C and PL/SQL; rewrote and improved SQL Triggers and SQL Stored Procedures; tested results, obtained sign-off for new code, released new Oracle binaries into client production sites. Successfully delivered software maintenance lifecycle for trade capture, enrichment and settlement processes.
+	<p>
+		<li><b>Sage Enterprise Solutions Ltd: C Developer (31 months)</b><br>
+	Sage Enterprise Solutions required developers to maintain and improve their industry scale accountancy systems. Engaged to capture client requirements and deliver software maintenance solutions. Captured new client requirements and/or replicated issues with current requirements; used Visual Studio to code or re-code C and SQL algorithms; tested solutions; obtained code reviews and change request sign-offs; released new binaries to clients. Successfully maintained and developed new requirements for industry scale accountancy software applications.
+	<p>
+</ul>
+
+<p align=justify>
+
+	<B><U><P>Career Chronology</B></U></P>
+<ul>
+<li>Feb 2012 to Apr 2012: Nomura: Fixed Income Business Analyst (contract)
+<li>Jun 2011 to Jan 2012: BNP Paribas: eFX Architecture Business Analyst (contract)
+<li>Sep 2007 to Jun 2011: BNP Paribas: Senior FX Production Support (contract)
+<li>Dec 2004 to Sep 2007: FX Alliance Ltd: Lead FX Production Support
+<li>Apr 2002 to Sep 2002: ABN Amro NV: Production Support (contract)
+<li>Feb 2001 to Nov 2001: Misys Securities Trading Systems: 3rd Line Production Support
+<li>Aug 1998 to Feb 2001: Sage Enterprise Solutions: Graduate Developer
+</ul>
+
+<B><U><P>Qualifications</B></U></P>
+
+<ul>
+<li>ACI Dealing Simulation Course in FX spot dealing
+<li>Diploma in C & C++ programming
+<li>MSc Entrepreneurship at University of Bristol
+<li>BSc Information Systems & Management at University of London
+<li>4 ‘A’ Levels at AAAB grades
+<li>Scholarship to Harrow School, Harrow-on-the-Hill
+</ul>
+
+</body>
+</html>

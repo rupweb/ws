@@ -1,0 +1,33 @@
+P, BR, DD, TD, SPAN, UL, LI, input, option {
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	color : #666666;
+}
+
+B {
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	color : #2163AD;
+}
+
+ul {
+	float:center;
+}
+
+a {
+	float:center;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10px;
+}
+
+a:hover {
+	background-color:#2163AD;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color : white;
+}
+
+tr
+ {
+ border: 1px solid black;
+ }
+

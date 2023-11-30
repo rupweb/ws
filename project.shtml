@@ -1,0 +1,34 @@
+<html>
+
+<head>
+<title>Webster Systems</title>
+<META NAME="Keywords" Content="information systems and management consultancy rupert st john webster">
+<META NAME="Description" Content="Webster Systems is an information systems consultancy specialising
+in applications development and support on Wintel and Lintel platforms over Oracle and SQL Server
+databases using C, C++, C#, SQL, PL/SQL, T-SQL, Java, VB, ASP, ADO, COM, Visual Studio, Vi, SCCS, 
+Perl, HTML, VBScript, Javascript, UNIX Script, Windows Script. We aggressively pursue the latest 
+technology developments and comprehensively assess their value to existing systems.">
+
+<base target="_self">
+<link rel="stylesheet" href="base.css">
+
+</head>
+
+<body>
+
+<center>
+<img border="0" src="image.gif" align="middle" alt="The value of information"></img>
+</center>
+
+<p><center><b>ISM Project</b></center></font>
+<p><a href="abstract.htm">Abstract</a>
+<p><a href="project.doc">Leading issues project write-up</a>
+<p><a href="csharp.htm">C# programs</a>
+<p><a href="sqlserver.htm">SQL Server 2000 database tables</a>
+<p><a href="website.htm">This website</a>
+<p><a href="visual.htm">Visual Studio .Net</a>
+<p><a href="regsource.htm">Regression data sourcefiles</a>
+<p><a href="regplots.htm"><font color="black">Regression plots and graphs</font></a>
+<p align=justify>
+A new plan is to change the database platform from SQL Server 2000 to MySql because the ISP here supports MySql, meaning the whole project could be automated to run each morning, gather data on yesterday's closing prices and volumes from the NYSE, update the MySql database, before returning up to date analytics through webpage reports, using ASP and MySql to dynamically update web pages each day.
+<p></body></html>

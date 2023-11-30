@@ -1,0 +1,263 @@
+<html>
+	<head>
+		<title>Rupert St John Webster's CV</title>
+		<meta name=vs_showGrid content="False">
+		<META NAME="Keywords" Content="information systems and management consultancy Rupert St John Webster">
+		<META NAME="Description" Content="Webster Systems is an information systems consultancy specialising in fixed income business analysis, development and support on Wintel and Lintel platforms over Oracle and SQL Server databases using C, C++, C#, SQL, PL/SQL, T-SQL, Java, VB, ASP, ADO, COM, Visual Studio, Vi, SCCS, Perl, HTML, VBScript, Javascript, UNIX Script, Windows Script.">
+<base target="_self">
+<link rel="stylesheet" href="base.css">
+	</head>
+
+	<body>
+
+		<!--#exec cgi="cgi-bin/cvcount.cgi"-->
+
+<center>
+<img border="0" src="image.gif" align="middle" alt="The strategy of information"></img>
+</center>
+<p>
+
+		<B><P ALIGN="center">RUPERT ST JOHN WEBSTER</B>
+		<BR><CENTER><a href="mailto:rupert@webstersystems.co.uk"><b>rupert@webstersystems.co.uk</b></a><br><b>(07740) 289100</b></CENTER>
+<CENTER><p><img src = "images/rupert_st_john_webster.jpg" alt="Rupert St John Webster"></CENTER>
+
+<B><U><p>Principles and objectives</p></B></U>
+<p>
+<strong>Close to the customer:</strong> If your customers succeed, so do you. Let them drive strategy.
+<br><strong>Actions add value:</strong> Be experimental, work in stages, manage risks, but get on with it.
+<br><strong>Performance culture:</strong> Identify the scorecards and metrics that determine performance.
+<br><strong>Ethical vision:</strong> The Golden Rule for all customers, competitors, stakeholders and employers.
+<br><strong>Think differently:</strong> You can't do any better if you are the same as everyone else.
+<br><strong>Seek insight:</strong> Insight reduces risk, and drives performance and sales.
+<br><strong>Work intensely:</strong> Because intensity separates the best from the average.
+<br><strong>Enjoy your work</strong>
+
+</p>
+<B><U><P>Profile</B></U></P>
+
+<p align=justify>FIXED INCOME TECHNOLOGY SPECIALIST seeking organizations that can benefit from proven systems development, production support and business analysis skills. <A href="http://www.dcs.bbk.ac.uk/courses/bscism/outline.php">BSc Information Systems and Management</a>, <a href="http://www.fen.bris.ac.uk/engmgt/entre/pgentre.html">MBA/MSc Entrepreneurship</a> with over ten year’s industry experience. 
+
+
+<p align=justify>CURRENT KEY SKILLS: Front office trading platforms business analysis and production support. I have current skills in FI eCommerce pricing, orders, dealing, positions and hedging processes written in C++, Java and C#, over distributed caches and Oracle, SQL Server, Sybase, using MQ and RV messaging. I provide analysis such as stakeholder interviews, CATWOE root definitions, data flow diagrams, rich pictures, swim lane flowcharts and fully dressed use cases. Last year I passed the <a href="http://www.aci-uk.com/acidsc.html">ACI Dealing Simulation Course</a> in FX spot and options trading. This year I am working as a BA on next generation Fixed Income trading platforms projects.
+
+<p align=justify>I am looking for a leading role in business analysis and operations for trading systems. I would:
+
+<UL>
+<LI><DIV align=justify>Deliver business analysis and production support for fixed income pricing and hedging systems, liaising with users across front office, middle office, developers and support.</LI>
+<LI><DIV align=justify>Plan production changes. Work with senior IT and business analysts to schedule and deliver risk free maintenance and/or project changes, testing and support.</LI>
+</UL>
+
+<P align=center>
+
+<B><U><P>Employment History</B> </U></P>
+
+<B><I>
+<p align=justify>
+
+From Feb 2012, Contract, Nomura, London.</B><BR>
+<B><BR>Fixed income business analyst</B></I><p>
+<b>Skills used: Use cases, swim lanes, data flow modeling, consultancy documentation (Word, Visio, Excel, PowerPoint)</b> 
+		<UL>
+			<LI>
+				<DIV align=justify>Business analyst for the fixed income production support team tasked with documenting the next generation systems. This involves investigating and modeling present and future states of pricing, orders, dealing, position and hedging systems across rates and credit trading platforms.</DIV>
+			</LI>
+			<LI>
+				<DIV align=justify>My team uses the results for technical documentation of runbooks, user guides and system administration guides for anyone intending to interact with the next generation system, with a focus on regional production support staff and operational excellence.</DIV>
+			</LI> 
+		</UL>
+
+		<U>
+		</U>
+
+<B><I>
+<p align=justify>
+June 2011 – Jan 2012, Contract, BNP Paribas, London.</B><BR>
+<B><BR>eFX architecture business analyst</B></I><p>
+<b>Skills used: C# scripting, use cases, SSM root definitions, data flow modeling.</b> 
+		<UL>
+			<LI>
+				<DIV align=justify>Business analyst capturing requirements to replace the current core architecture with next generation systems. This involved liaising with business and technology groups to capture the core vision, stakeholder interests and to document and present the top priority use cases, and CATWOE root definitions, for the eFX architecture team.</DIV>
+			</LI>
+			<LI>
+				<DIV align=justify>I wrote C# scripts to model current systems architecture use. The scripts captured all the services that read and write data in the current production environments, and then converted results to Excel in order to profile the data flows, and analyze deltas.</DIV>
+			</LI>
+			<LI>
+				<DIV align=justify>Deputy change manager. This meant acting as liaison for FX system changes between the development teams, support teams and business teams, following a change process that I helped to implement.
+			</LI> 
+		</UL>
+
+		<U>
+		</U>
+
+<B><I>
+<p align=justify>
+Sept 2007 – June 2011, Contract, BNP Paribas, London.</B><BR>
+<B><BR>Senior FX production support</B></I><p>
+<b>Skills used: Windows 2000, SQL, C# scripting, VIM.</b>
+		<UL>
+			<LI>
+				<DIV align=justify>Working for the FX support team I provided technical support for eFX pricing, dealing and hedging systems. Monitored pricing sources, price making, streaming and quoting applications, order and deal feeds to hedging systems, and hedging algos. Supported all the GUI platforms for FX spot, forward and swaps trading.</DIV></LI>
+			<LI>
+				<DIV align=justify>FX support was responsible for the change management of the production environment to assess, to document, to implement and communicate changes. I managed this process for the eFX trading, FX support and development teams.</DIV></LI>
+			<LI>
+				<DIV align=justify>FX support delivered work on real time monitoring systems. Using C# I designed and coded a network heartbeat monitoring tool to ensure stability of pricing circuits, and a C# GUI to quickly and concisely show trade data across all exchanges and client FIX sessions where the bank transacts in FX.</DIV></LI>
+</UL>
+
+		<U>
+		</U>
+
+
+<B><I>
+<p align=justify>
+
+Dec 2004 - Sept 2007 Permanent. FX Alliance Ltd, London.</B><BR>
+FX electronic trading platform. (</I><A HREF="http://www.fxall.com"><I>http://www.fxall.com</I></A><I>)
+<B><BR>Applications engineer</B></I><p>
+<b>Skills used: SQL, Java, JSP, UNIX, Windows 2000, Tomcat</b>
+		<UL>
+			<LI>
+				<DIV align=justify>
+	Maintaining the FXall runbook, I monitored the UNIX and Java trading engines and price feeds to ensure consistent delivery of liquidity from FXall provider banks to FXall customers over the multibank electronic trading platform. After 2 years I was the lead applications support engineer for the London office, using skills gained in my MSc Entrepreneurship to help recruit and train the london applications support team.</DIV></LI>
+			<LI>
+				<DIV align=justify>Investigated technical problems with the applications, databases and webservers used to conduct business on the platform. This involved analysis of the technology behind trade processing and messaging throughout the front, middle and back offices. I investigated transactions to resolve any enquiries on FX trading processes from customers or providers.</DIV></LI>
+			<LI>
+				<DIV align=justify>Worked in a team responsible for designing tools to innovate the real time monitoring and performance systems. We managed a diverse selection of software that ensured the electronic platform to be available and running 24 hours per day. I wrote monitoring software in C# to ensure that FXall processes delivered maximum performance.</DIV></LI>
+</UL>
+
+		<U>
+		</U>
+
+<B><I>
+				<p align=justify>2004 (Apr to Sept) ECapitalTrack.com</B><BR>
+Fixed income rate reset messaging system. (</I><A HREF="http://www.ecapitaltrack.com/"><I>http://www.ecapitaltrack.com</I></A><I>)
+<B><BR>Systems developer
+				</B></I><p>
+
+
+<b>Technical tools used: Visual Studio .Net, ASP, ASP.Net, VB, C#, COM+, ADO, XML, VBScript, IIS, SQL Server 2000, DTS, SQL triggers and stored procs, Windows 2000, MS Excel, MS Access, FTP, HTML, Database design, Data flow diagrams, context diagrams, schematic diagrams.</b>
+		<UL>
+			<LI>
+				<DIV align=justify>I led a project to develop automatic messaging for a fixed income database, targeting the design, testing and support of an internet front end over IIS, SQL Server and ASP functionality. I designed and coded VB, ASP and SQL algorithms in Visual Studio .Net</DIV></LI>
+			<LI>
+				<DIV align=justify>
+	I was responsible for reporting to all stakeholders in the project internally and externally. We had contractual agreements with FT-id, Deutschebank, JP Morgan Chase and Citibank. </DIV></LI>
+			<LI>
+				<DIV align=justify>
+	I established industry best practise for the software development and support processes, ensuring both security and integrity of the system, and timely customer support. </DIV></LI>
+
+</UL>
+
+		<U>
+		</U>
+
+<B><I>
+<p align=justify>
+
+
+2003 (Jun-Sep) Contract. Falcon Security (Overseas) Ltd, Cyprus.</B><BR>
+International business security consultancy. (</I><A HREF="http://www.falconsecurity.info/"><I>http://www.falconsecurity.info</I></A><I>)
+<B><BR>Senior IT co-ordinator
+				</B></I><p>
+<b>Skills used: Oracle 9i, Excel VBA, User management, Norton Security.</b>
+		<UL>
+			<LI>
+				<DIV align=justify>
+	I led the technical side of a project to rollout Oracle 9i to assist investigators with the process of corporate security analysis, setting goals and targets with my supervisor.</DIV></LI>
+			<LI>
+				<DIV align=justify>I designed and coded Excel VBA and Oracle SQL algorithms to gather and format very large amounts of investigations data from online Lexis-Nexis services.</DIV></LI>
+			<LI>
+				<DIV align=justify>
+	I advised directors on the necessary IT strategy to ensure project success, to attract new business and to use the new business systems the most effectively.</DIV></LI>
+</UL>
+
+		<U>
+		</U>
+
+<B><I>
+				<p align=justify>2003 (From Jan) Contract. ECapitalTrack.com
+						
+		</B><BR>Fixed income rate reset messaging system. (</I><A HREF="http://www.ecapitaltrack.com/"><I>http://www.ecapitaltrack.com</I></A><I>)
+				<B><BR>Lead technical support architect
+					
+				</B></I><p>
+<b>Technical tools used: Visual Studio .Net, ASP, VB, C++, COM+, ADO, XML, VBScript, IIS, SQL Server 2000, DTS, SQL triggers and stored procs, Windows 2000/NT, MS Excel, MS Access, FTP, HTML, Data Flow Diagrams, Context diagrams.</b>
+		<UL>
+			<LI>
+				<DIV align=justify>I helped develop, test and support the input and output interfaces to the fixed income rate reset database. I setup IIS 5.0, designed and coded VB, ASP and SQL algorithms in Visual Studio .Net, wrote triggers and stored procedures in T-SQL and coded FTP messaging programs in C++.</DIV></LI>
+			<LI>
+				<DIV align=justify>Due to my previous experience I championed a project to create industry standard data validation and support procedures that allow technicians to remotely support the system, handling the customer relationship in supporting the delivery of information to clients.</DIV></LI>
+			<LI>
+				<DIV align=justify>I advised directors of progress reports and estimations of completion dates for development tasks and acted as technical consultant in sales presentations and research meetings with leading blue chip clients.</DIV></LI>
+</UL>
+
+		<U>
+		</U><B><I>
+				<p align=justify>2002 (Apr-Sep) Contract to permanent. ABN AMRO NV, Bishopsgate,
+			London.
+		</B><BR>Tier 1 investment bank. (</I><A HREF="http://www.abnamro.com/"><I>http://www.abnamro.com</I></A><I>)
+				<B><BR>Transaction Support Group
+					
+				</B></I><p>
+<b>Technical tools used: Oracle, TOAD, SQL, SQL Scripting, UNIX scripting, RIMS, CREST, SWIFT, trade floor support, Remedy, Lotus Notes, Trade accounting, Trade processing, Customer service, MS Excel, MS Access.</b>
+		<UL>
+			<LI><DIV align=justify>I acted as a systems administrator for the European equities trading applications, running on Windows NT over Oracle. The team supported equities and FX trade flows from front office feeds to back office settlement, supporting CREST and SWIFT messaging processes, trade enrichment and settlement instructions, static data configuration, user security and reporting.</LI>
+			<LI><DIV align=justify>Support calls arriving by email, telephone or face to face were administered and documented through the Remedy system. Typically I would solve problems to do with messaging or SSI’s (Standard Settlement Instructions) for the Oracle trading system, where necessary liaising with DBA’s, developers, testers and implementation teams.</LI>
+			<LI><DIV align=justify>Essentially I ensured the Oracle database and the GL RIMS settlement system, interfacing with a Fidessa trade bridge, functioned at peak performance throughout the trading day.</LI>
+			<LI><DIV align=justify>Using SQL, I produced position keeping and risk analysis reports on exchange rates, pending trades and journals of accounts and I resolved accounting position breaks.</LI></UL>
+
+		<B><I><p align=justify>2001 (Feb-Nov) Permanent. Misys Securities Trading Systems, Finsgate,
+			London.
+		</B><BR>Leading UK financial
+		systems software provider. (</I><A HREF="http://www.misys.com/"><I>http://www.msts.com</I></A><I>)
+				<B><BR>Applications Support/Development
+					Consultant 
+				</B></I><p>
+<b>Technical tools used: Oracle, TOAD, SQL, Pro*C, PL/SQL, Oracle triggers and stored procs, Oracle forms and reports, UNIX Korn, UNIX Solaris, UNIX Scripts, UNIX development tools, Vi, SCCS, CREST, SWIFT, Emacs, MS Excel, MS Access.</b>
+		<UL>
+			<LI><DIV align=justify>I was responsible for 3rd line support for equity and FX traders of four investment banks. By telephone or emails from traders and trade floor support staff, I gathered problem definitions, observed trade execution history through UNIX sessions, then identified the relevant Oracle Pro*C and PL/SQL database code. This often involved analysis of the Pro*C code and business processes around front office OMS feeds, and CREST or SWIFT messaging.</LI>
+			<LI><DIV align=justify>On identifying the problem domain, I investigated and changed Pro*C and PL/SQL algorithms in packages and triggers using UNIX Solaris. On the success of testing and implementation, I documented my results using UNIX SCCS. In many of my activities I developed relationships and liaised with clients, management, development, database administrators and test teams.</LI>
+			<LI><DIV align=justify>	The RIMS system supports STP for equities, futures, options, bonds, convertibles, FX trades and commodities as well as user definable instruments and I was trained extensively in electronic securities trading technologies to enable me to solve problems in live trading environments for any of the above.</LI></UL>
+
+
+		<B><I>
+				<p align=justify>Aug 1998 - Feb 2001 Permanent. Sage Enterprise Solutions, Maidenhead,
+			Berkshire.
+		</B><BR>Leading UK accounting systems software
+		provider. (</I><A HREF="http://www.sage.com/"><I>http://www.sage.com</I></A><I>)</I>
+				<B><BR>Graduate developer</b> <p>
+<b>Technical tools used: Microsoft Visual Studio, C, C++, VB, Embedded SQL, SQL Server 7, SQL Server 2000, UNIX Solaris, UNIX AIX, UNIX HP-UX, UNIX SCO, Korn and Bourne shells, ADO, OLE DB COM, SCCS, MS Excel, MS Access, Windows NT/2000, Test director, Winrunner, Windows forms and reports.</b>
+					<UL>
+				</B></I><LI><DIV align=justify>I investigated, analysed, designed and resolved maintenance issues with C/C++ and SQL on UNIX and Windows NT, after 3 years becoming expert in using Microsoft Visual Studio to solve problems with the underlying C/C++ and SQL code for enterprise scale business accounting software applications and the SQL Server database.</LI>
+		<LI>	I addressed technical problems with functionality in OO and structured code, data structures and function pointers throughout different software modules; installed and maintained SQL Server databases, configuring COM and ADO objects to allow applications code direct access to data using embedded SQL.</LI>
+		<LI><DIV align=justify>Within my team I worked through the software lifecycle for each issue, reconciling client requirements with design and coding solutions. I designed and coded Mercury automated test scripts in TSL to test my work automatically, and implemented results using UNIX SCCS.</LI></UL>
+
+			<B><U><P>Education and Qualifications</U>
+
+			</B></P>
+		<P align=justify>2010 : <STRONG>ACI Dealing Simulation Course</STRONG> in FX spot dealing, ACI UK.
+The <a href="http://www.aci-uk.com/acidsc.html">Dealing Simulation Course</a> teaches physical trading techniques through experiencing the hectic demands of a dealer’s job, in a realistic and responsible environment. It recreates an electronic broking and option pricing module as well as voice brokers to truly replicate the dealing experience.
+		<BR>2004 : <STRONG>MBA/MSc Entrepreneurship</STRONG>, University of Bristol.
+The MSc degree investigates the people, purposes and processes of <A href="http://www.fen.bris.ac.uk/engmgt/entre/pgentre.html">Entrepreneurship</a> providing the full range of business skills necessary to maximize the likelihood of success in new projects.
+<BR>1999 - 2003 : <STRONG>BSc Information Systems and Management</STRONG>, University of London. The degree covered the design and operation of <A href="http://encyclopedia.thefreedictionary.com/Information%20systems">information systems</a> and the practise and theory of <A href="http://encyclopedia.thefreedictionary.com/management">management</a>. See <a href="ism.shtml">ISM degree</a> for details of modules covered and <a href="project.shtml">ISM project</a> for details of my final year project.
+		<BR>1995 - 1996 : <STRONG>Diploma in C and C++ programming</STRONG>. Covered object
+			oriented and procedural techniques in designing and implementing software
+			applications using C and C++.
+				<BR>1991 : Variety of jobs in Paris, which means I am proficient in French.
+				<BR>1990 : Art, Physics, Chemistry and Maths 'A' Levels at AAAB grades.
+				<BR>1987 : 12 'O' Levels and GCSE's all at A grade.
+				<BR>1985 : Scholarship to Harrow School, Harrow-on-the-Hill.
+			</P>
+		
+			<B><U><P ALIGN=justify>Personal achievements</U>
+			</B>
+			<UL>
+				<LI><DIV align=justify>Experienced church organist having played for congregations of 500 and more. Now little by little mastering Bach’s 48 preludes and fugues and Beethoven’s sonatas, some of the world’s greatest keyboard music. (Also great for keyboard are Queen, Erroll Garner, Keith Jarrett and the like…)
+</div></li>
+<br><li><DIV align=justify>
+Extensively read in securities trading, financial markets and securities analysis, I experiment with all kinds of investment and trading strategies.
+</li></ul>
+			<p align=justify>Date of birth : 28th July 1972
+				<BR>Nationality : British
+				<BR>References can be provided on
+				request. Don't hesitate to contact me with any questions.</P></body>
+</html>

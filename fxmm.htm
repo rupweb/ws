@@ -1,0 +1,1073 @@
+<html>
+
+
+
+<head>
+
+<title>Webster Systems</title>
+
+<META NAME="Keywords" Content="information systems and management consultancy rupert st john webster">
+
+<META NAME="Description" Content="Webster Systems is an information systems consultancy specialising
+
+in applications development and support on Wintel and Lintel platforms over Oracle and SQL Server
+
+databases using C, C++, C#, SQL, PL/SQL, T-SQL, Java, VB, ASP, ADO, COM, Visual Studio, Vi, SCCS, 
+
+Perl, HTML, VBScript, Javascript, UNIX Script, Windows Script. We aggressively pursue the latest 
+
+technology developments and comprehensively assess their value to existing systems.">
+
+
+
+<base target="_self">
+
+<link rel="stylesheet" href="base.css">
+
+<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+
+</head>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42967341-1', 'webstersystems.co.uk');
+  ga('send', 'pageview');
+
+</script>
+
+<body>
+
+<object type="text/html" data="menu.htm" width="100%" align="center"></object>
+
+<br>
+
+<center>
+
+<img border="0" height="257" src="http://www.bankofengland.co.uk/statistics/PublishingImages/yieldcurve/ukinf.gif" width="325" align="middle" alt="BOE commercial bank liability forward curve"></img>
+
+<p><b><a href = "http://en.wikipedia.org/wiki/Foreign_exchange_market">FX</a> and <a href = "http://en.wikipedia.org/wiki/Money_market">MM</a> training</b>
+
+</center>
+
+<p>
+
+<a id="#contents"><u>Contents</u><a/><br><br>
+
+<a href="#introduction">Introduction</a><br>
+
+<a href="#regulation">Financial regulation</a><br>
+
+<a href="#daycount">Day count conventions and interest</a><br> 
+
+<a href="#mm">Money markets</a><br>
+
+<a href="#mmd">Money market derivatives</a><br> 
+
+<a href="#ir hedges">Interest rate hedges</a><br>
+
+<a href="#fra">Fixed rate agreements</a><br>
+
+<a href="#irs">Interest rate swaps</a><br>
+
+<a href="#cirs">Currency interest rate swaps</a><br>
+
+<a href="#spot fx">Spot FX</a><br>
+
+<a href="#spot fx pnl">Spot FX PnL</a><br>
+
+<a href="#forward fx">Forward FX</a><br>
+
+<a href="#fxo forwards">FX option forwards</a><br>
+
+<a href="#fx swaps">FX swaps</a><br>
+
+<a href="#fx ff">FX forward forwards</a><br>
+
+<a href="#short fx swaps">Short dated FX swaps</a><br>
+
+<a href="#interest arbitrage">Interest arbitrage</a><br>
+
+<a href="#arbitrage example">Interest arbitrage example</a><br>
+
+<a href="#arbitrage breakeven">Interest arbitrage breakeven</a><br>
+
+<a href="#treasury">Treasury division</a><br>
+
+<a href="#risk">Risk environment</a><br>
+
+<a href="#forward fx risks">Forward FX risks</a><br>
+
+<a href="#options fx risks">Options FX risks</a><br>
+
+<a href="#capital adequacy">Capital adequacy</a><br>
+
+<a href="#model code">The model code</a><br>
+
+<p>
+
+<table border = 1 cellpadding = 5>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="introduction"><b>Introduction</b></a>
+
+<p align=justify> Typical market participants are central banks, trading banks, commercial banks, investment banks, multinational corporates, 
+
+other corporates, importers and exporters, private clients, hedge funds, voice brokers, electronic brokers, and so on. They can be basically separated into providers and 
+
+clients, or price makers and price takers, except these boundaries are blurring with new technologies.
+
+<p align=justify> Change and growth going on in the marketplace includes client change, credit rating change, credit limit change, 
+
+spreads change, margins change, and FX pricing providers (and clients) competing together. It's financial competition, sometimes financial warfare, which the regulator wants to regulate.
+
+<p align=justify> Retail and wholesale market transactions are defined by the UK FSA as "wholesale transactions aren't 
+
+usually less than 100,000 GBP". In reality the difference between retail and wholesale market transactions is probably about the available spread in the market place. Retail spreads 
+
+are thousands of times wider than wholesale spreads. 
+
+<p align=justify> Market conventions apply to FX and MM products. An exchange standardises these conventions, but <u>for a cost</u> any other product with any kind of 
+
+parameters can be traded OTC (<a href="http://en.wikipedia.org/wiki/Over-the-counter_(finance)">over-the-counter<a/>). A calling counterparty is defined as a taker, the receiving counterparty is the maker. As a price provider, who is taker and 
+
+who is maker is important as a signal for hedging. If you find yourself maker to a lot of takers you have proprietary information about the short term market direction.
+
+<p align=justify> If you're a client an FX provider will give you a credit rating, by which the spread offered to you will be adjusted. The spread 
+
+is also adjusted according to size, and market conditions.
+
+<p align=justify> Products are priced according to spread between buying and selling, lending or borrowing. They're quoted in a "buy low 
+
+sell high" style, and it turns out that FX products are quoted as bid / offer (ie buy 1.3456 / sell 1.3459), as are international money market products (ie borrow 3.2 / lend 3.5) 
+
+but London money market products are quoted as offer / bid (ie lend 3.5 / borrow 3.2) 
+
+<p align=justify> Maturity dates don't cross month ends, ie if 3 months begins on 30th April, it will end on 31st July. Where a spot or forward
+
+date falls on a weekend or a holiday then maturity moves one day ahead. That's important for interest calculations, confirmations, settlement risks, and cashflow management.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <b> <a id="regulation"><a href = "http://en.wikipedia.org/wiki/Financial_regulation">Financial regulation</a></a></b>
+
+<p align=justify>Regulation is a hot topic, because of the recent financial market problems - bankruptcy, interest rate fixing issues, fx rate fixing issues. But regulators
+
+look at the clearing process after the trade is done, because, let's face it, counterparties are free to make any kind of deal they like. The issue is who regulates, and the
+
+answer is it's done by the exchange and/or clearing house acting according to its clients long term interests. The regulator won't ban trading itself, but affects the clearing 
+
+house so centrally cleared products are cleared the way the regulators have decided. Thus regulation will guide everyone's long term interests, presuming the clearing is done 
+
+according to the regulator. But couldn't clients agree to clear deals beyond control of a regulator? In that case, the reporting requirement means there's a central database 
+
+of logs. These can be searched according to identifier if an enquiry is launched!
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <b> <a id="daycount"><a href = "http://en.wikipedia.org/wiki/Day_count_convention">Day count conventions and interest</a></a></b>
+
+<p align=justify> The <u>money market basis</u> is used for for USD and EUR interest calculations recording actual days of interest over a 360 day 
+
+year. In other words an overnight deal is one day of interest, whereas a 1 month deal may vary from 27 to 35 days depending on weekends and holidays. The quote is actual/360.
+
+<p align=justify>The <u>sterling money market basis</u> is used for GBP interest calculations taking actual days over a 365 day year. It's quoted as actual/365. 
+
+Other currencies using this day count base are AUD, NZD, HKD and SGD.
+
+<p align=justify>The <u>actual actual basis</u> is used for government bond markets (except EUR). It's quoted actual/365 or actual/366.
+
+<p align=justify>The <u>bond basis</u> is used for eurobond insterest and assesses each month as 30 days, making 360 days in a year. It's quoted as 360/360.
+
+<p align=justify>The <u>currency basis</u> quotes interest calculations (except GBP) as actual/360, and GBP is quoted actual/365.
+
+<p align=justify>Rate calculations involve conversion between day count bases.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="mm"><b>Money markets</b></a>
+
+<p align=justify> <a href = "http://www.bbalibor.com/">LIBOR</a> is the reference rate for lending and borrowing (deposits and loans), for the most creditworthy organisations. 
+
+Higher "risk" businesses have higher borrowing costs, ie EURIBOR. As credit rating decreases so borrowing costs (offered rate above LIBOR) increase. LIBOR is the input for 
+
+pricing models calculating prices on interest rate options, caps, floors and collar products. LIBID (bid rate) is the rate to pay for deposits. In different timezones offered 
+
+rates are for example TIBOR for Tokyo and SIBOR for Singapore. Bid rates are TIBID and SIBID.
+
+<p align=justify> As maturity date increases from spot, the yield curve can be calculated for each currency. Broken dates are calculated using 
+
+linear extrapolation. Yield curve shapes are typically positive, negative, flat or humped.
+
+<p align=justify> Interest rate positions are often tracked using average interest rates. Mismatched positions can happen when hedges for products 
+
+don't have the same timeframe, ie covering a 3 month liability with a 6 month asset.
+
+<p align=justify> Treasury bills (short term government debt) are traded in the secondary market on a pure discount rate: the NPV (<a href = "http://en.wikipedia.org/wiki/Net_present_value">net present value</a>) for the 
+
+product is calculated. Commercial bills are also pure discount operations. Some UK bills are eligible for re-discount at BoE (<a href = "http://www.bankofengland.co.uk">Bank of England</a>) making them as good as cash. Think of cash 
+
+discounting operations. 150 banks are on the BoE list of acceptors for eligible bills. An eligible bill will have a tenor of less than 187 days. Consider that the pricing of yield is 
+
+different to discount rate because yield assumes the product is held to maturity, which will result in a larger return than a secondary market exchange.
+
+<p align=justify> Buying a certificate of deposit means buying liquidity - a fixed time interest rate PLUS the ability to cash in at any time 
+
+before maturity if funds are needed. The redemption return depends on accruals to date and rates to maturity. For certificates of deposit in the secondary market the secondary 
+
+price is calculated using (a) maturity proceeds, and (b) yield on remaining time value. For commercial paper rates are calculated using LIBOR plus pips.
+
+<p align=justify> A <a href = "http://en.wikipedia.org/wiki/Repo">REPO</a> is like a swap; an agreement to sell then buy an asset, for <u>repo interest</u>. REPO is to do 
+
+with cashflows. Central banks use repos to manage interest rates, by changing the supply of cash at the discount window available for commercial banks. In a repo the legal 
+
+title to the asset is transferred to the buyer along with an agreement to repurchase the asset. The repurchase price is fixed from the start. The repo asset can then be sold 
+
+on, or closed out immediately in the event of counterparty bankruptcy. For example the seller agrees a repo with buyer for an asset. Seller gets cash from buyer. Buyer gets 
+
+legal title to asset plus repo agreement from seller. In a classic repo the seller remains liable for the <u>collateral</u> on the repo agreement, in other words if the repo 
+
+asset becomes worthless the seller has to provide a further asset to the buyer. In the event of a seller default the buyer can keep the repo asset. 
+
+<u>The price of the whole repo is fixed</u>, which means if there is a fall in the value of the repo asset there's a loss to the seller. If there's a rise in the value of the repo asset there's a gain 
+
+for the seller.
+
+<p align=justify> A clean bond price is the sum of all present values for all future cashflows to bond maturity. A dirty bond price is the clean 
+
+price plus accrued interest. Consider therefore the cashflows in a "cash and carry" where:
+
+<p>(a) Buyer buys a bond
+
+<br>(b) Buyer repos the bond to cover the funds for (a) at repo rate
+
+<br>(c) Buyer sells a bond future (hopefully) for more than the repo rate
+
+<p>The implied repo rate needs to be higher than the actual repo rate. The cashflows are: The bond buyer pays and the bond seller delivers 
+
+the bond to the bond buyer. The bond buyer becomes a repo seller agreeing a repo agreement with the bond as repo asset to sell and repurchase for a fixed rate. The bond buyer 
+
+/ repo seller delivers the bond plus bond repo agreement to the repo buyer who pays the bond buyer / repo seller. If the bond falls in value the bond buyer / repo seller risks 
+
+a loss. If the bond rises in value the bond buyer / repo seller returns a gain. But the bond buyer / repo seller now becomes a bond futures seller, selling a bond future at 
+
+the market. Changes in the bond value are now riskless to the bond buyer / repo seller. A profit is locked in if the price of the bond future returns more than the cost of 
+
+the repo.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="mmd"><b>Money market derivatives</b></a>
+
+<p align=justify> Concern over exposures to currency or interest rate movements led to <a href = "http://en.wikipedia.org/wiki/Derivatives_market">derivatives</a> products. 
+
+Cashflows are subject to FX risk, and loans and deposits are subject to both interest rate and currency risks. So derivatives are a kind of insurance against adverse moves, 
+
+or shocks in the market.
+
+<p>If interest rate returns fall on broken dates and the yield curve is very steep then forward / forward products can be used for calculations 
+
+instead of linear interpolation. In a steep yield curve an average rate between two points would be off market because the 2nd point used already includes rates from spot to 
+
+the 1st point used.
+
+<p align=justify> Derivative products were traded open outcry, where hand movements are used to communicate above the noise on the trading floor. 
+
+The exchange trades the products that prove to be popular with traders. For example, futures allow fund managers to adjust the sensitivity of their portfolios to interest 
+
+rates and currency movements. As product innovation happens exchanges standardise products and allow them to be traded electronically. They will charge less for spread trading 
+
+margins.
+
+<p align=justify> The quoting of <a href = "http://en.wikipedia.org/wiki/Interest_rate_future">STIR</a> (short term interest rate) futures is 100 less decimalised interest 
+
+rate. This allows the price to be quoted low / high, where the provider buys low and sells high. For example short sterling tracks the LIBOR rate, and is quoted 100 - LIBOR.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="ir hedges"><b>Interest rate hedges</b></a>
+
+<p align=justify> A strip is a series of adjacent contracts in time that covers a position.
+
+<p>A roll is a hedge where a stack of near date contracts is rolled into a rolling stack in time that covers a position.
+
+<p>Stub dates and tail dates cover broken date positions.
+
+<p>If it's thought that long term rates will rise further than short term rates then a calendar spread trade is appropriate. You buy the near 
+
+term contract and sell the far. Any type of yield curve hedge can be designed. If you think the yield curve will flatten then sell near rate and buy the far rate.
+
+<p align=justify> Reporting is all about cash flows. Reports show the hedge versus the underlying and offset the PnL. Banks have very strict 
+
+hedge / trade reporting and categories should not be switched. A trade is, for example, arbitraging futures contracts, whereas a hedge is designed to offset a specific risk, 
+
+not target a profit opportunity.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="fra"><b>Fixed rate agreements</b></a>
+
+<p align=justify> An <a href = "http://en.wikipedia.org/wiki/Forward_rate_agreement">FRA</a> is the OTC equivalent of an interest rate future. It's a bit like a forward 
+
+forward deposit without any funds transfers. You buy or sell the interest rate, as buying the FRA is like borrowing cash, and selling the FRA is like lending cash. Note 
+
+that this is the opposite to the futures market where buying a future is like lending at a rate (like a bond) and selling a future is like borrowing at a rate. Therefore 
+
+an FRA is like an interest rate NDF (<a href = "http://en.wikipedia.org/wiki/Non-deliverable_forward">non deliverable forward</a>). It's off balance sheet meaning no asset is transferred except cashflow exchanged at settlement date 
+
+(usually LIBOR v FRA fixing rate).
+
+<p align=justify> In a bank or brokerage the profit from trading FRA is generated by constant pricing, trading (jobbing) and shading or skewing 
+
+the spread to encourage or discourage trading according to price. The spread depends on market conditions. The constant flow makes FRA trading like trading spot FX.
+
+<p align=justify> Under <a href = "http://www2.isda.org/">FRABBA</a> the formula for FRA settlement uses LIBOR against the FRA fixing rate.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="irs"><b>Interest rate swaps</b></a>
+
+<p align=justify> Interest rate swaps developed out of <a href = "http://en.wikipedia.org/wiki/Back_to_back_loan">back to back loans</a>, providing cheaper and more flexible funding for multinational 
+
+corporates. For example, IBM and World Bank can swap exposures and/or cashflows arising from different sources as each counterparty has a different profile. An IRS is 
+
+legally one transaction, <a href = "http://en.wikipedia.org/wiki/Off-balance-sheet">off balance sheet</a>, for which there's no exchange of principal either at the outset or at maturity. So it needs less capital scrutiny than a long 
+
+term loan. Usually cashflows are synchronised so only the net cashflow is exchanged. The principal is simply a reference for calculating interest rate cashflows.
+
+<p align=justify> Markets tend to quote IRS in view of the fixed rate leg. A bid is for a party to receive the fixed rate (bank pays fixed) and 
+
+and offer is for a party to pay the fixed rate (bank receives fixed). To price an IRS the spread is added on each side to the mid point of a reference bond.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="cirs"><b>Currency interest rate swaps</b></a>
+
+<p align=justify> These are interest rate swaps where the fixed rate is in one currency and the floating rate is in another. At maturity a principal amount may 
+
+be exchanged at an agreed exchange rate. This is still off balance sheet because it's a contingent liability (an FX forward being off balance sheet). A bank or a corporate 
+
+can therefore make its balance sheet immune to interest rate risks using IRS or currency swaps. There are several types of swap structure out there governing the size, 
+
+frequency, and liability to pay and receive (exchange) cashflows. For example deferred swap, amortizing swap, accreting swap, roller coaster, circus, zero coupon, basis swap, 
+
+extendable, putable and rate capped swaps. Most of these structures are an <u>asset contained with an IRS</u> ie an IRS over a loan facility, or an IRS over a deposit.
+
+<p align=justify> Swap structures can also diversify or limit credit risks.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="spot fx"><b>Spot FX</b></a>
+
+<p align=justify> Cross currency spot FX rates are worked out considering the <u>cashflows through USD or EUR</u> considering a common denominator.
+
+<p align=justify>In other words, CHF/JPY is equivalent to: 
+
+<p align=justify>On LHS buy CHF / <del>sell USD</del> and sell JPY / <del>buy USD</del>
+
+<br>On RHS sell CHF / <del>buy USD</del> and buy JPY / <del>sell USD</del>
+
+<p align=justify> The USD cancels out.
+
+<p align=justify> In cross currencies you need to watch carefully which currency is quoted in terms of which currency. The quote is such that 
+
+for currency X Y then the quote means Y per 1 X, or mathematically Y / X. So, if currency is CHF/JPY that means ? JPY per 1 CHF (with USD as common denominator), 
+
+ie the base currencies are quoted USDCHF and USDJPY (which means CHF per 1 USD, and JPY per 1 USD). With USD already denominator for each quote the CHF/JPY currency 
+
+cross is simply calculated as Y / X, or USDJPY / USDCHF.
+
+<p align=justify> In contrast, GBP/CHF. That means ? CHF per GBP (with USD as denominator), ie GBP per 1 USD and CHF per 1 USD. But market convention quotes GBPUSD (which 
+
+means USD per 1 GBP), therefore need to use 1 / X, or 1 / GBPUSD, rate to make USD common denominator. This means GBP/CHF is calculated as Y / (1 / X), or USDCHF / (1 / GBPUSD).
+
+<p align=justify> Finally, GBP/AUD. That means ? AUD per GBP (with USD as denominator), so it's calculated (1 / Y) / (1 / X), or (1 / AUDUSD) / (1 / GBPUSD).
+
+<p align=justify> For a match in a spot FX exchange to become a trade the counterparty credit limits need to be checked. That's usually the 
+
+USD equivalent of the matched orders. If the credit check fails the orders need to be quickly made available for matching again, and the failing counterparty contacted.
+
+<p align=justify> On an ECN a price taker "takes" the price, ie doesn't move it, and a maker "makes" the price, ie moves it. A taker is 
+
+considered the aggressor (taking prices) and a maker the passive party (making prices). Any party can act either as a maker or a taker, the exchange needs to decide who is who.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="spot fx pnl"><b>Spot FX PnL</b></a>
+
+<p align=justify> Calculated in units per pip. Currency X Y means a 1 pip change in X has a change in Y depending on size. For example, a position 
+
+of 1,000,000 EURUSD will have a PnL of 100 USD per pip change in EURUSD rate. A pip in EURUSD is considered 0.0001 EURUSD. Savings on FX transactions can be measured in pips, 
+
+for example buying 1mio EURUSD @ 1.2545 instead of @ 1.2548 is a saving of 3 pips, or $300
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="forward fx"><b>Forward FX</b></a>
+
+<p align=justify> It's about the relationship between interest rates and spot FX. Banks tend to charge spread both on the interest rate and the 
+
+spot FX components of a forward, and will cover the risks separately as well. The major difference in covering risk for a bank is whether they use on or off balance sheet 
+
+approach. A deposit or loan in a particular currency is on balance sheet, but an FX swap is not.
+
+<p align=justify> Forward prices are quoted as points. They are either at a premium or a discount to spot once the forward date arrives, and one 
+
+man's premium is another man's discount. In other words, for GBP/USD if USD is trading at a premium then GBP is trading at a discount.
+
+<p align=justify> Where base currency is at a <u>premium</u> then it's more expensive to trade forward than spot, the forward points will be quoted 
+
+low - high and <u>added</u> to spot. Thus the currency costs more forward than at spot.
+
+<p align=justify> Where base currency is at a <u>discount</u> then it's cheaper to trade forward than spot, the forward points will be quoted high - low 
+
+and <u>subtracted</u> from spot. Thus the currency costs less forward than at spot.
+
+<p align=justify> Currency pairs quoted at par means both interest rates are the same and there's no premium or discount between the currencies.
+
+<p align=justify> So, if currency X has rate 3% and currency Y has rate 7% then currency X is at a premium. Think 100 - 3 = 97 (premium) and 100 - 7 = 93 (discount).
+
+<p align=justify> To calculate forward points cross currency, figure out whether forward prices are at a premium or discount from spot prices, 
+
+then add or subtract accordingly.
+
+<p align=justify> To calculate forward prices cross currency, follow the convention for spot (by expressing the currency with a common denominator, 
+
+usually USD, but instead of using spot prices of the base pairs, use forward prices of the base pairs. 
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="fxo forwards"><b>FX option forwards</b></a>
+
+<p align=justify> Not true options, but forward contracts where delivery date is optional within a range, or can be partial across a series of delivery dates. Usually the 
+
+range is a maximum 3 months because otherwise premiums and discounts can become substantial (bad for the client). These products help clients deal with uncertainties of 
+
+timing for cashflows. At close out any difference in requirements is settled (ie partial deliveries) or extensions applied (ie a new contract). To price these products 
+
+the bank looks at forward rates for the start and maturity dates of the option lifetime. The bank considers that the client may exercise at the worst possible date, and 
+
+prices accordingly.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="fx swaps"><b>FX swaps</b></a>
+
+<p align=justify>Banks seek to match cashflows on different value dates, by switching cashflows with someone else. Swaps are quoted as: <br>LHS, the bid for the base currency 
+
+on the forward date. Therefore on the LHS the maker sells spot (or near date) and buys forward. <br>RHS, the offer for the base currency on the forward date. Therefore on 
+
+the RHS the maker buys spot (or near date) and sells forward.
+
+<p align=justify>The idea is to remove interest rate risk on the two currencies in the swap through the exchange of cashflows. The spot component of the swap price is the 
+
+mid price between bid / offer, unless the cashflows in the swap are uneven, in which case the spot price component is pitched to the more valuable leg. The Model Code says 
+
+the spot price used "must be within the current spread".
+
+<p align=justify>If the base currency is at a <u>discount</u> to the terms currency the swap points are quoted high - low, ie 10 - 8, and then <u>subtracted</u> from spot 
+
+to maintain the buy low, sell high maxim. If the base currency is at a <u>premium</u> to the terms currency the swap points are quoted low - high, ie 8 - 10, and then 
+
+<u>added</u> to spot.
+
+<p align=justify>In a swap, remember the cashflows for each leg in both currencies. For example to deal on LHS in 6 month EUR/USD with a price 43 - 48 the market maker: 
+
+<p align=justify><u>on spot</u>
+
+<br>sells 1 mio EUR @ 1.2500
+
+<br>buys 1.2500 mio USD
+
+<p align=justify><u>in 6 months</u>
+
+<br>buys 1 mio EUR @ 1.2543
+
+<br>sells 1.2543 mio USD
+
+<p align=justify>The USD cash flows on the two dates show a $4,300 "cost" to the market maker (points against me) and a $4,300 "benefit" to the taker (points my favour). The 
+
+swap points were quoted 43 - 48 which shows a forward premium, meaning EUR has a lower interest rate than USD. The points against me for the market maker are the equivalent 
+
+of giving up the currency with the lower interest rate (EUR) in exchange for the currency with the higher interest rate (USD). The points my favour for the market taker are 
+
+the equivalent of giving up the currency with the higher interest rate (USD) in exchange for the currency with the lower interest rate (EUR).
+
+<p align=justify>This shows the FX swap points reflect the interest rate differential between the two currencies involved. If the trade was on the RHS the market maker would 
+
+be giving up the currency with the higher interest rate (points my favour) and receiving the currency with the lower interest rate. The swap provides both parties with an 
+
+accurate cost of switching such cashflows.
+
+<p align=justify>For broken dated swaps, use linear interpolation by counting the pips between quoted dates, dividing by day count (to give pips per day) and then multiply 
+
+by broken days. As in money market derivatives, interpolation may not be appropriate given steep yield curves.
+
+<p><a href="#contents">Back<a/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="fx ff"><b>FX forward forwards</b></a>
+
+<p align=justify>If a dealer wants a swap of cashflows commencing on a particular forward date, then use a forward forward.
+
+<p align=justify>One way to price and hedge a forward forward is by two spot swaps. If swap rates for GBP/USD are:
+
+<p align=justify>
+
+<table border = 1><tr><td colspan = 2 align = center>GBP/USD</td></tr><tr><td>3 mth</td><td>34 - 31</td></tr><tr><td>6 mth</td><td>70 - 65</td></tr></table>
+
+<p align=justify>On LHS, (a) buying 3 month forward (selling spot) and (b) selling 6 month forward (buying spot) is (a) 31 points and (b) 70 points. The difference is 
+
+39 points. <br>On RHS, (c) selling 3 month forward (buying spot) and (d) buying 6 month forward (selling spot) is (c) 34 points and (d) 65 points. The difference is 
+
+31 points.
+
+<p align=justify>The 3 / 6 month forward forward is quoted 39 - 31. The points are high - low showing GBP is at a discount, so the points are subtracted from spot.
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="short fx swaps"><b>Short dated FX swaps</b></a>
+
+<p align=justify>FX swaps can be used to hedge spot positions. Suppose there's a surplus (long) or deficit (short) of currency at EOD. A surplus currency can be deposited 
+
+(lent out) or a deficit squared (borrowed) using a short dated swap to obtain breakeven at EOD. Basically the spot rate of the currency is adjusted for the "cost" or 
+
+"benefit" of giving up the higher rate currency, or otherwise, and bringing the cashflow back to tomorrow or today.
+
+<p align=justify>Pre-spot swap rates behave the opposite way to post-spot swap rates. In other words for base currency <u>discount</u> the pre-spot pips are <u>added</u> 
+
+to spot. For base currency <u>discount</u> the pre-spot pips are <u>subtracted</u> from spot.
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="interest arbitrage"><b>Interest Arbitrage</b></a>
+
+<p align=justify>The link between the eurocurrency money markets in the foreign exchange market. Dealers enter interest rate <a href = "http://en.wikipedia.org/wiki/Arbitrage">
+
+arbitrage</a> operations for various reasons:
+
+<p align=justify>Generating one currency (for lending) having accepted deposits in another currency.
+
+<br>Funding FX assets where liabilities in the asset currency are expensive compared to money market deposits and FX swap rates.
+
+<br>Using currencies when lending in one currency is not as attractive as lending in another combined with an FX swap.
+
+<br>Dealing forward in a currency without a well developed exchange market. In other words, creating forward points from spot rates and deposits and loan rates.
+
+<br>Trading considerations using packages of cross currency deposits, FX swaps, and loans to create a synthetic position.
+
+<br>Market opportunity for funding in different currency markets. In other words using a currency where there's surplus available liquidity.
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+	<p align=justify> <a id="arbitrage example"><b>Interest Arbitrage Example</b></a>
+
+<p align=justify>Say the requirement is to loan 10,000,000 EUR for 6 months. There are the following spot and six months forward data:
+
+<p align=justify>
+
+<table>
+
+<tr align = top>
+
+<td>
+
+<table border = 1><tr><td colspan=2 align=center><u>EUR/USD FX data</u></td></tr><tr><td>spot EUR/USD rate</td><td>0.89 95 - 05</td></tr><tr><td>6 months (180 days) forward points</td><td>50 - 55</td></tr></table>
+
+</td>
+
+<td>
+
+<table border = 1><tr><td colspan=2 align=center><u>EUR and USD money market data</u></td></tr><tr><td>EUR 180 days rate</td><td>3.00 - 3.125 %</td></tr><tr><td>USD 180 days rate</td><td>4.125 - 4.25 %</td></tr></table>
+
+</td>
+
+</tr>
+
+</table>
+
+<p align=justify>The cashflows involved in the interest arbitrage are as follows. Both EUR and USD money market basis is actual/360.
+
+<br>Start with the requirement for the 6 months EUR loan:
+
+<p align=justify><table border = 1><tr><td><font color="blue">cashflow 1</font></td><td>EUR loan</td><td>3.125%</td><td> - EUR 10,000,000</td></tr>
+
+	<tr><td><font color="blue">cashflow 2</td></font><td>EUR interest receivable</td><td>(10,000,000 x 180 x 3.125) / (360 x 100)</td><td> + EUR 156,250.00</td></tr>
+
+<tr><td><font color="blue">cashflow 3</td></font><td colspan=2>EUR loan maturity</td><td> + EUR 10,000,000</td></tr></table>
+
+<p align=justify>To fund the EUR loan use a 6 months EUR/USD FX swap buying EUR spot and selling six months EUR forward. The swap price quoted is 50 - 55 and the dealer takes 
+
+50 points "his favour". The spot mid price is 0.9000 so the cashflows on the two legs of the swap are:
+
+<p align=justify>
+
+<table border = 1><tr><td><font color="blue">cashflow 4</td></font><td>buy spot EUR</td><td> + EUR 10,000,000</td><td>0.9</td><td><font color="blue">cashflow 5</td></font><td>sell spot USD</td><td> - USD 9,000,000</td></tr>
+
+	<tr><td><font color="blue">cashflow 6</td></font><td>sell EUR forward</td><td> - EUR 10,000,000</td><td>0.9050</td><td><font color="blue">cashflow 7</td></font><td>buy USD forward</td><td> + USD 9,050,000</td></tr>
+
+	<tr><td><font color="blue">cashflow 8</td></font><td colspan=5>Benefit of FX swap</td><td> + USD 50,000</td></tr></table>
+
+<p align=justify>The "benefit" of the swap is therefore USD 50,000. But cashflow 4, the spot leg USD cash requirement has to be funded, so the dealer takes a matching USD deposit:
+
+<p align=justify>
+
+<table border = 1><tr><td><font color="blue">cashflow 9</td></font><td>USD deposit</td><td>4.25%</td><td> + USD 9,000,000</td></tr>
+
+	<tr><td><font color="blue">cashflow 10</td></font><td>USD interest payable</td><td>(9,000,000 x 180 x 4.25) / (360 x 100)</td><td> - USD 191,250.00</td></tr>
+
+<tr><td><font color="blue">cashflow 11</td></font><td colspan=2>USD loan maturity</td><td> + USD 9,000,000</td></tr>
+
+</table>
+
+<p align=justify>Given the cashflows, there is one remaining transaction. Take the EUR interest received and sell it forward for USD:
+
+<p align=justify>
+
+<table border = 1><tr><td><font color="blue">cashflow 12</td></font><td>sell EUR receivable forward</td><td>EUR 156,250.00</td><td>0.9050</td><td><font color="blue">cashflow 13</td></font><td>buy USD forward</td><td>USD 141,406.25</td></tr></table>
+
+<p align=justify>Finally, the PnL on the deals are as follows:
+
+<p align=justify>
+
+<table border = 1><tr><td><font color="blue">cashflow 2</td></font><td>EUR interest receivable</td><td> + EUR 156,250.00</td></tr>
+
+	<tr><td><font color="blue">cashflow 8</td></font></td><td>Benefit of FX swap</td></font><td> + USD 50,000</td></tr>
+
+	<tr><td><font color="blue">cashflow 10</td></font></td><td>USD interest payable</td></font><td> - USD 191,250.00</td></tr>
+
+<tr><td><font color="blue">cashflow 13</td></font></td><td>buy USD forward</td></font><td> + 141,406.25</td></tr>
+
+<tr><td><font color="blue">cashflow 14</td></font></td><td>Arbitrage PnL</td></font><td> + USD 156.25</td></tr>
+
+</table>
+
+
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="arbitrage breakeven"><b>Interest Arbitrage Breakeven</b></a>
+
+<p align=justify>So the USD 156.25 PnL in the above example is down to rounding error in deposit and loan rates. But what's the factors that determine PnL in the deal? Using 
+
+the interest arbitrage formula, you calculate the breakeven minimum interest rate required on the base currency loan; the maximum interest rate you could pay on the terms 
+
+currency deposit; and the minimum required swap points "our favour". The outstanding risk of the arbitrage is that the cash interest receivable must be sold forward at a rate 
+
+producing sufficient funds to meet the cash interest payable. For breakeven that forward rate must be the same rate as the forward leg of the FX swap. Were the outright 
+
+forward interest position not covered, changes in currency values could produce reduced profit, or an overall loss.
+
+<p align=justify><u>Given the forward rate and deposit rate, what's the minimum rate required on the loan?</u>
+
+<p align=justify><table border = 1><tr><td>rate = [(1 + (deposit rate x deposit days / deposit day count)) x (spot rate / forward rate) - 1] x loan day count / loan days</td></tr>
+
+<tr><td>rate = [(1 + (0.0425 x 180 / 360)) x (0.9 / 0.9050) - 1 x 360 / 180</tr></td></table>
+
+<br>It works out to 0.031215468, meaning the minimum interest rate required on the loan is 3.122% 
+
+<br>Ceteris paribus, any more than 3.122% and profit opportunities increase. Any less and the deals make a loss.
+
+
+
+<p align=justify><u>Given the forward rate and loan rate, what's the maximum rate payable on the deposit?</u>
+
+<p align=justify><table border = 1><tr><td>rate = [(1 + (loan rate x loan days / loan day count)) x (forward rate / spot rate) - 1] x  deposit day count / deposit days</td></tr>
+
+<tr><td>rate = [(1 + (0.03125 x 180 / 360)) x (0.9050 / 0.9) - 1 x 360 / 180</tr></td></table>
+
+<br>It works out to 0.042534722, meaning the maximum interest rate payable on the loan is 4.2535% 
+
+<br>Ceteris paribus, any less than 4.2535% and profit opportunities increase. Any more and the deals make a loss.
+
+
+
+<p align=justify><u>Given the deposit rate and loan rate, what's the minimum required forward points?</u>
+
+<p align=justify><table border = 1><tr><td>rate = spot x ((deposit rate x deposit days / deposit day count) - (loan rate x loan days / loan day count)) / (1 + (loan rate x loan days / loan day count))</td></tr>
+
+<p align=justify><tr><td>rate = 0.9 x ((0.0425 x 180 / 360) - (0.03125 x 180 / 360) / (1 + (0.03125 x 180 / 360))</tr></td></table>
+
+<br>It works out to 0.004985, meaning the minimum required forward points are 49.85 
+
+<br>Ceteris paribus, any more than 49.85 and profit opportunities increase. But less and the deals make a loss.
+
+
+
+<p align=justify>One risk is that all the legs of the trade must be done without the spot FX rate changing, mainly impacting the FX swap. Given spot rates change more 
+
+frequently than money market rates, then execute the FX swap legs first, and then the deposit and/or loan.
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="treasury"><b>Treasury Division</b></a>
+
+<p align=justify>The treasury takes care of the following tasks:
+
+<br>Prop a/c
+
+<br>Risk assessments
+
+<br>Business development, policy and marketing
+
+<br>Trading limits
+
+<br>Segregation of duty between front and back office
+
+<br>Taping conversations and checking messages
+
+<br>Maintaining records
+
+<br>Transfer of title to instruments
+
+<br>Risk management of whole bank activity
+
+<br>Compliance with FSA and BoE wholesale requirements
+
+<br>Financial accounting statements
+
+<br>Support functions, ie customer static data
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="risk"><b>Risk Environment</b></a>
+
+<p align=justify>It's about the aggregate interest rate risk per currency pair, and maturity date. It's bad if the organisation is overlent and rates rise, or overborrowed 
+
+and rates fall. PnL is calculated using NPV of future cashflows. Gaps and risks are highlighted. If longer term assets are funded by shorter term liabilities it can give 
+
+rise to liquidity risk where the shorter term credit squeezes, or assets can't be sold. Limits are set to manage any such funding mismatches. Further limits and liquidity 
+
+risk targets are set and enforced by central bank deposit requirements, varying country to country. These central bank requirements are sometimes passed onto clients as 
+
+margin on lending rates. 
+
+<p align=justify>Credit risks depend on the counterparty in a transaction. Delivery risk depends on the time it takes instructions to execute. Market risk depends on volatility 
+
+and products traded. Such risks on an exchange are reflected in margin requirements, again about the current market volatility. 
+
+<p align=justify>Basis risk depends on how much movement in the futures is reflected in the underlying. It may not match in the end. Credit risk is removed for futures trading 
+
+once registered and matched by the exchange or clearing house who then guarantees contract performance. Margin risk is that margin won't be posted (credit risk) and positions 
+
+closed at a loss. Delivery risk happens for every maturity date in every currency. For long dated instruments the market exposure can become substantial. Market replacement 
+
+risk is another credit risk if a swap counterparty defaults. 
+
+<p align=justify>A bank can assume swap credit risk if they act like a clearing house for swap counterparties. Credit risk depends on time to maturity, volatility, collateral, 
+
+reset frequency, currency, the shape of the yield curve, etc. A central bank can limit exposures according to the size and balance sheet of a transacting bank, for instance 
+
+using the overnight open exchange position limit. Further trading limits are set on an internal basis.
+
+<p align=justify>FX risks include:
+
+<br><u>transaction</u> ie import export in foreign currency, which is hedged by a cash hedges.
+
+<br><u>translation</u> ie of assets and liabilities in foreign currency, which is hedged using options hedges.
+
+<br><u>economic</u> ie of competitors invoicing in a foreign currency, which is hedged using forward hedges.
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="forward fx risks"><b>Forward FX risks</b></a>
+
+<p align=justify> It's effectively trading off balance sheet interest rate differentials, by currency and value date. PnL is discounted back to today using NPV adjustments. 
+
+Cashflows are broken down into categories of funds across currencies and value dates. Breakeven swap points prices are compared to mark to market valuations. Outstandings are 
+
+assessed against any limits. Counterparty default on longer dated forwards and swaps is assessed and even if the current rates are in the bank's favour the risk still applies. 
+
+Borrower defaults are a risk in money market loans.
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="options fx risks"><b>Options FX risks</b></a>
+
+<p align=justify> Buyer risk is limited to premium, seller to unlimited losses. Options clearing houses can remove credit risks by guaranteeing contract performance. Margins 
+
+may be lost to non members of exchanges, ie for OTC options. OTC options contain credit risks.
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="capital adequacy"><b>Capital Adequacy</b></a>
+
+<p align=justify> About regulations for banks set by central banks, formalised in BIS guidelines. It's set on a counterparty by counterparty basis. Capital depends on 
+
+transaction, domicile, maturity, cost of replacement and a % for future exposure. Basel tier 1 (equity reserves) and tier 2 (securities debt of over 5 years to maturity) 
+
+requirements are meant to make "a level playing field". BIS ration says 8% capital cover must consist of at least 50% tier 1 capital. This is all about credit risk. The BoE 
+
+published CAD guidelines in 1994, introducing the concept of the trading book. So, capital adequacy is calculated by (a) mark to marker valuation of the trading books, (b) 
+
+addition of future volatility, (c) add (a) plus (b) for credit risk, then apply (d) a counterparty creditworthiness score.
+
+<p align=justify> CAD II allows VaR models to calculate in line with Basel. Delta, gamma and vega risks are measured to calculate capital adequacy. It must be a 99% confident 
+
+VaR estimate.
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+<tr>
+
+<td>
+
+<p align=justify> <a id="model code"><b>The Model Code</b></a>
+
+<p align=justify> <a href = "http://www.aciforex.org/gb/model-code-66.cfm">The Model Code</a> is about regulations and dispute in respect of market practises. It's an amalgam 
+
+of codes from London, NYK, Tokyo and Singapore. The code originates from the 1970's O'Brien letter following the Lloyds Lugano incident.
+
+<p align=justify>I Timezones and business hours: Established hours are Monday 5am Sydney to Friday 5pm New York. Holidays aren't "opprtunities to adjust prices for profit". 
+
+Timezones and holidays affect STOP LOSS orders, for which clear records and lines of communications are required. The nature of the market is that often only the dealers 
+
+involved are aware of transaction rate they are transacting at. Mobile phones are unrecordable so only for use in DR.
+
+<p align=justify>II Personal conduct: No drugs, gifts, betting, bribery, laundering or fraud. Keep confidentiality (ie no dealing away once counterparty name is known) and 
+
+avoid misinformation or rumours. Watch personal dealing.
+
+<p align=justify>III Back office, payments & confirmations: Confirms can be written or verbal. They're to identify any issues at the earliest possible time.
+
+<p align=justify>IV Disputes: Should follow local codes of practise. Risk positions should be squared where possible. Broker disputes use "points", often netted up per day. 
+
+Points differences must be cleared by the FSA, per a written agreement, with record keeping.
+
+<p align=justify>V Authorisation & documentation: About dealing policy, reporting, approvals, limits, settlement processes and permitted broker/dealer relationships. The 
+
+market's central tenet is "my word is my bond". Newer financial products tend to have standard terms and conditions. Well, qualifying conditions for deals are to be made 
+
+known at the start of any dealing conversation.
+
+<p align=justify>VI Brokers & brokerage: Brokers are intermediaries and forbidden from acting in discretionary fund management. The choice of brokers is for management, as 
+
+are commissions, fees, etc. Once the primary counterparty name is known and credit checked then any secondary names are allowable. Offers cannot later be withdrawn because 
+
+the primary counterparty is unacceptable AFTER the dealer is aware of his obligation to deal.
+
+<p align=justify>VII Dealing practise: The Lugano scandal was in forward FX concealed dealing. From then on all FX deals of any date are done "within current spread, to 
+
+reflect rates at the time the transaction was done". Therefore historic rollover won't happen. Any non market rate transaction needs an audit trail. Dealing words need to be 
+
+understood by non native english speakers.
+
+<p align=justify>VIII Dealing specific transactions: Connected relationships must be disclosed by dealers. Legal documents must be in place before dealing Repos.
+
+<p align=justify>IX Risk principles: About management involvement, understanding, controls, support, standards and documentation.
+
+<p align=justify>X Corporate client dealing: Must provide <u>all</u> requested information prior to dealing.
+
+<p align=justify>XI Jargon: If a deals shouts "done" at the very instant the broker calls "off" then no deal is done.
+
+<p align=justify>Appendices I -> VII: The model code covers FX spot, FX forward, FX options, MM dealing, interest rate options, FRA's, IR and FX swaps, bullion and precious 
+
+metals. Futures are not included!
+
+<p><a href="#contents">Back<a/>
+
+</tr>
+
+</td>
+
+
+
+</table>
+
+</body>
+
+</html>
+
