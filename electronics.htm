@@ -1,0 +1,132 @@
+<html>
+
+
+
+<head>
+
+<title>Webster Systems</title>
+
+<META NAME="Keywords" Content="information systems and management consultancy rupert st john webster">
+
+<META NAME="Description" Content="Webster Systems is an information systems consultancy specialising
+
+in applications development and support on Wintel and Lintel platforms over Oracle and SQL Server
+
+databases using C, C++, C#, SQL, PL/SQL, T-SQL, Java, VB, ASP, ADO, COM, Visual Studio, Vi, SCCS, 
+
+Perl, HTML, VBScript, Javascript, UNIX Script, Windows Script. We aggressively pursue the latest 
+
+technology developments and comprehensively assess their value to existing systems.">
+
+
+
+<base target="_self">
+
+<link rel="stylesheet" href="base.css">
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<!--#exec cgi="cgi-bin/mktcount.cgi"-->
+
+
+
+<center><img border="0" src="images/computer2.gif" align="middle" alt="Playing the game"></img></center>
+
+<p><center><b>From hardware to software: diodes, resistors, switches, capacitors, transistors</b></center></font>
+
+<p>
+
+
+
+<b></b> 
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The transistor was invented out of the diode. A diode allows current to flow in one direction but not the opposite. That means the diode effectively has two values of resistance: either low resistance allowing current to flow or high resistance not allowing current to flow.
+
+
+
+<p align=justify>
+
+<center><img border="0" src="images/diode.gif" align="middle" alt="Diode"></img></center>
+
+
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the diode was discovered then an obvious research question was what kind of diode could have multiple resistance values? From that question the transistor (a transforming resistor) was invented.
+ Put simply, the output resistance of a transistor is transformed by applying a charge to the base signal. The transistor consists of an input, a base and and output known as the collector, base and emitter.
+
+
+
+<p align=justify>
+
+<center><img border="0" src="images/transistor.gif" align="middle" alt="Transistor"></img></center>
+
+
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consider that the transistor can "transform" resistance in a circuit by acting as a kind of dynamic resistor, and then take a simple "voltage divider" circuit. In a simple voltage divider circuit the output voltage is divided depending on two resistors fixed between the input voltage, the output voltage and earth. The "divided" output voltage always remains fixed because the resistor setup cannot change. At least, that was the story before the transistor. 
+
+
+
+<p align=justify>
+
+<center><img border="0" src="images/divider.gif" align="middle" alt="Voltage divider"></img></center>
+
+
+
+<p align=justify>
+
+Then, once one of the resistors in a voltage divider is replaced with a transistor it becomes possible to dynamically change the output voltage depending on whether a base signal is applied to the transistor. For example, when the transistor is set at very low resistance between input voltage and earth the output voltage is ZERO (current simply flows to earth) and when the transistor is set at very high resistance between input voltage and earth (current cannot flow to earth) the output voltage is the INPUT VOLTAGE. Substituting 0 for ZERO and 1 for the INPUT VOLTAGE we see the start of binary signal processing. 
+
+
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This begins to show why the transistor was the invention of the 20th century. The outputs of transistor enabled circuits follow truth tables:
+
+
+
+<p align=justify>
+
+<center><img border="0" src="images/truth.gif" align="middle" alt="Truth table"></img></center>
+
+
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A NOT gate has 1 transistor, NAND, NOR, AND and OR take 2 or 3 transistors. When the basic logic gates are combined with switches they produce adders and half adders, and so on.
+
+
+
+<p align=justify>
+
+<center></img>
+
+<img border="0" src="images/and_gate.gif" alt="And gate"></img>
+
+<img border="0" src="images/or_gate.gif" alt="Or gate"></img>
+
+<img border="0" src="images/not_gate.gif" alt="Not gate"></center>
+
+
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When transistors are combined with capacitors it produces memory. Indeed, in DRAM 1 bit takes 1 transistor and 1 capacitor to store. Now things could get useful to know when coding. Having said that, DRAM memory loses charge once the power's turned off, so persistent memory requires more components per bit storage.
+
+
+
+<p align=justify>
+
+<center><img border="0" src="images/dram.gif" alt="DRAM"></img>
+
+<img border="0" src="images/sram.gif" alt="SRAM"></img></center>
+
+
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conclusions? For the purposes of ultra fast systems the programming language employed ought to be able to consider exactly how many logic gates are used by the circuits completed for each program instruction. Extrapolate to measure how many transistors, switches and capacitors are used throughout the all circuits completed by a program. Given that an int in Java takes 32 bits, we know that to store an int in DRAM takes 32 transistors and 32 capacitors. Further, a 32 bit instruction set takes 32 transistors to store in DRAM and a 64 bit instruction set takes 64. Presumably the CPU registers are also one transistor and one capacitor per bit.
+
+
+
+<p align=justify>Tell me what you think, please <b><a href="mailto:rupert@webstersystems.co.uk">get in touch</a></b>! 
+
+</body></html>

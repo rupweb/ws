@@ -1,0 +1,97 @@
+<html>
+
+
+
+<head>
+
+<title>Webster Systems</title>
+
+<META NAME="Keywords" Content="information systems and management consultancy rupert st john webster">
+
+<META NAME="Description" Content="Webster Systems is an information systems consultancy specialising
+
+in applications development and support on Wintel and Lintel platforms over Oracle and SQL Server
+
+databases using C, C++, C#, SQL, PL/SQL, T-SQL, Java, VB, ASP, ADO, COM, Visual Studio, Vi, SCCS, 
+
+Perl, HTML, VBScript, Javascript, UNIX Script, Windows Script. We aggressively pursue the latest 
+
+technology developments and comprehensively assess their value to existing systems.">
+
+
+
+<base target="_self">
+
+<link rel="stylesheet" href="base.css">
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<!--#exec cgi="cgi-bin/mktcount.cgi"-->
+
+
+
+<center><img border="0" src="images/computer2.gif" align="middle" alt="Playing the game"></img></center>
+
+<p><center><b>100,000 transactions per second</b></center></font>
+
+<p>
+
+
+
+<b>The business</b>
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100,000 transactions per second means several hundreds of thousands of orders matching from thousands of books across thousands of instruments with what looks like 200,000 different clients: each transaction having a party and a counterparty. But, the most actively trading clients submit the most orders (or make markets) at the same time.
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Having said the above, the huge majority of clients at 100k tps would be the top few hundred clients in the market - the leading banks, funds and institutions - taking 80% of the business, with remaining clients taking the remaining 20% BUT indeed the top 50 or so clients would almost certainly be counterparties to the remaining clients.
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;But, is there any need to book 100,000 transactions per second? Perhaps one day. It sounds like <a href="http://www.nanex.net/aqck2/4022.html">quote stuffing</a> 
+
+<p align=justify><b>The technology</b>
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Given the business structure - the point is not a 100,000 tps burst for one instrument in one book - then there are usually just a few hundred client threads active in a 100k tps burst, it's not like there are 200,000 client threads to satisfy. If there were, then just CPU context switching takes too long not to mention the I/O taken to read a socket.
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This means that a few hundred threads send orders to match with each other. The functionality between different books is key. Indeed, each client thread is relatively quiet (assuming one thread per client) and it's the matching engines getting snowed to match the 200,000 orders over the few seconds that it takes to generate 100,000 transactions per second. How many books per matching engine?
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 100,000 trade tickets have to be written out eventually. The way that happens is to write in shorthand at first and then enrich later. It's well known that only 5 elements of information need to be written down to book a trade, everything else can be enriched.
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Having said that, the matching engines are I/O bound (not CPU bound) as they reads bursts in orders written from the few hundred active trading client threads. A loosely coupled system means clients write orders to middleware and the matching engine reads orders from the middleware. The number of reading threads in the matching engine determines the I/O efficiency. The tradeoff is coupling between software components, whether to use shared memory queues or the network layer to achieve the loose coupling required for stability. Either way the matching engine is I/O bound as the time taken to read orders off a socket (or from an in memory cache) probably exceeds the time the CPU needs to check the book and match incoming orders according to the bank's or exchange's business rules, then write up the trade tickets onto distributor threads. On my platform I am profiling the difference.
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So a performant matching algorithm is required; even if an order consists of the minimum 5 data elements the bottleneck is always reading the orders from the sockets and/or in memory caches. Read everything into the book(s) (which are a type of array) and match.
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The further step is to write each match into a transaction, enrich and then send back to each client. Once the matching engines hand off completed trades to distributor to the Clearing function, the transaction is complete, but each of the 100,000 deals have to be sent back to each client accordingly for confirmation. As we said earlier, there won't be 200,000 clients to connect to, rather a few hundred. Even if there were as many as 200,000 clients to connect to the distributor/clearing house is I/O bound as the messages are sent over wires to clients.
+
+<p align=justify><b>The operations</b>
+
+<p align=justify>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Having said all the above, a further challenge is logging the activity undertaken. Imagine if systems crashed and left 200,000 orders hanging, some filled, some partially filled, the market's moving and there'll be imminent enquiries. All 100,000 transactions would have to be "legally" reviewed by production support to explain to clients what went on as and when parts of the system fail.
+
+<p align=justify>Tell me what you think, please <b><a href="mailto:rupert@webstersystems.co.uk">get in touch</a></b>! 
+
+</body></html>

@@ -1,0 +1,320 @@
+<html>
+
+
+
+	<head>
+
+		<title>Webster Systems</title>
+
+		<META NAME="Keywords" Content="information systems and management consultancy rupert st john webster">
+
+		<META NAME="Description" Content="Webster Systems is an information systems consultancy specialising&#13;&#10;in applications development and support on Wintel and Lintel platforms over Oracle and SQL Server&#13;&#10;databases using C, C++, C#, SQL, PL/SQL, T-SQL, Java, VB, ASP, ADO, COM, Visual Studio, Vi, SCCS, &#13;&#10;Perl, HTML, VBScript, Javascript, UNIX Script, Windows Script. We aggressively pursue the latest &#13;&#10;technology developments and comprehensively assess their value to existing systems.">
+
+
+
+<base target="_self">
+
+<link rel="stylesheet" href="base.css">
+
+
+
+	</head>
+
+
+
+	<body bgcolor="#ffffff" Link=royalblue vLink=royalblue aLink=teal>
+
+		<center>
+
+			<img border="0" src="images/image.gif" align="middle" alt="The value of information"></img>
+
+		</center>
+
+		<CENTER>&nbsp;</CENTER>
+
+		<font color="#003399" size="4" face="Verdana"><center><b>Project C# programs</b></center>
+
+		<p>
+
+
+
+			<script language="JavaScript">
+
+var nyse2 = "http://marketrac.nyse.com/Light";
+
+var nyse = "/images/nyse_data.gif";
+
+
+
+function openPage(name) 
+
+{ 
+
+var page = name;
+
+windowprops = "titlebar=no,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=yes,width=800,height=600"; window.open(page,"", windowprops);
+
+}
+
+			</script>
+
+
+
+
+
+			<p>The Visual Studio
+
+				solution contains three projects which allow capture and analysis of the
+
+				underlying data.
+
+				<UL><LI>The LI_APP project (for Leading Issues Application) is the day to day
+
+					software to continue the analysis indefinitely.
+
+					<LI>The LI_HIST projects (for Leading Issues History) handled the transfer of
+
+					historical data to the SQL database.
+
+					<LI>The LI_multiple_regression project handled
+
+						calculations from the historical data to the database to enable a multiple
+
+						regression calculation.</LI></UL>
+
+				<P><b>LI_APP</b></P>
+
+				<P>The LI_app executable is made up of five major classes: </P>
+
+
+
+
+
+				<p>
+
+					The controlling class for the daily data gathering and analytics part of the
+
+					project is
+
+					<a href="project/Control_class.cs"><b>control_class</b></a>. This contains the main
+
+				function with which the executable starts,
+
+				and which references&nbsp;four 'worker' classes...
+
+
+
+				<p>The <a href="project/Data_capture.cs"><b>data_capture</b></a>
+
+					class handles the call to the <a href="javascript:openPage(nyse)" class="CONTENTS"><b>NYSE</b></a> data where the daily data is captured and
+
+				returned to the SQL Server database.
+
+
+
+				<p>The <a href="project/db_in.cs"><b>db_in class</b></a>
+
+				handles all population of data to the SQL Server database.
+
+
+
+				<p>The <a href="project/db_out.cs"><b>db_out class</b></a>
+
+				handles all use of data from the SQL Server database.
+
+
+
+				<p>The <a href="project/value_calc.cs"><b>value_calc class</b></a>
+
+					handles the regression calculations and subsequent analytics derived from the
+
+					data. The database must be populated in a format allowing analysis of the
+
+					regression equation:<BR><BR>
+
+					<center><P><B> Y = �0 + �1X + e </B></P></center>
+
+				<P>where Y = Today's dow 30 money flow (variable to be modeled)
+
+					<BR>X = Yesterday's top 5 money flow (variable used as a predictor of Y)
+
+					<BR>E(Y) = The deterministic component �0 + �1X, the line of means
+
+					<BR>�0 = Y intercept of line
+
+					<BR>�1 = Slope of the line
+
+					<BR>e = random error component
+
+					<br>
+
+					<br>
+
+				<p>The data_capture and value_calc
+
+						classes extensively
+
+						reference the db_in and db_out classes to handle the numerous calls for data to
+
+						and from the database.</p>
+
+				<P><B>LI_HIST</B></P>
+
+				<P>The LI_hist executable was created significantly from
+
+					coding done to create the LI_app executable. Several additional features were
+
+					included in order to deal with the different data formats and
+
+					different&nbsp;database tables. On reflection it would have been useful to
+
+					inherit the basic dbo_in and dbo_out classes and extend them, instead of using
+
+					them as templates for a whole new set of methods. However, Visual Studio .Net
+
+					made it very easy to copy the LI_app project as a whole and then use it as a
+
+					template for a new project. I did not investigate cross project inheritance.</P>
+
+				<P>So the LI_hist consists of four major classes:</P>
+
+				<P>The controlling class containing the main function with which the executable
+
+					starts,
+
+					and which references&nbsp;three 'worker' classes is the&nbsp;<A href="project/hist/historical_data.cs"><B>historical_data
+
+								class</B></A>.
+
+				<P>The <A href="project/hist/db_in.cs"><B>db_in
+
+								class</B></A>&nbsp;handles all population of data to the
+
+				SQL
+
+				Server database.
+
+				<P>The <A href="project/hist/db_out.cs"><B>db_out
+
+								class</B></A>&nbsp;handles all use of data from the SQL
+
+				Server
+
+				database.
+
+				<P>The <A href="project/hist/value_calc.cs"><B>value_calc
+
+								class</B></A> handles the regression calculations and
+
+					subsequent
+
+					analytics
+
+					derived from the historical data. Again, the database must be populated in a
+
+					format allowing analysis of the regression equation:<BR><BR>
+
+					<center><P><B> Y = �0 + �1X + e </B></P></center>
+
+				<P>As with LI_app, the historical_data and
+
+						value_calc
+
+						classes extensively reference the db_in and db_out classes to handle the
+
+						numerous calls for data to and from the
+
+						database.</P>
+
+				<P><B>LI_multiple_regression</B></P>
+
+				<P> The LI_multiple_regression executable was also created from coding done to
+
+					create
+
+					the LI_app executable. Additional features were included in order to create
+
+					data with the different data formats and
+
+					different&nbsp;database tables.</P>
+
+				<P>So the LI_multiple_regression executable&nbsp;consists of four major
+
+					classes:</P>
+
+				<P>The controlling class containing the main function with which the executable
+
+					starts,
+
+					and which references&nbsp;three 'worker' classes is the&nbsp;<A href="project/regression/regression_data.cs"><B>regression_data
+
+								class</B></A>.
+
+				<P>Again a modified <A href="project/regression/db_in.cs"><B>db_in
+
+								class</B></A>&nbsp;handles all population of data to the
+
+				SQL
+
+				Server database.
+
+				<P>The modified <A href="project/regression/db_out.cs"><B>db_out
+
+								class</B></A>&nbsp;handles all use of data from the SQL
+
+				Server
+
+				database.
+
+				<P>The <A href="project/regression/value_calc.cs"><B>value_calc
+
+								class</B></A> handles the regression calculations derived
+
+					from the now populated SQL tables. This time the tables must be populated to
+
+					allow calculations of the form:
+
+					<center><P><B> Y = �0 + �1X1 + �2X2 + �3X3+
+
+								�4X4 + �5X5&nbsp;&nbsp;+ e </B></P></center>
+
+				<P>where Y = Today's dow 30 money flow (variable to be modeled)
+
+					<BR>�0 = Y intercept of line
+
+					<BR>�1 = Slope of the line X1
+
+					<BR>X1 =
+
+					Yesterday's first money flow
+
+					<BR>�2 = Slope of the line X2
+
+					<BR>X2 = Yesterday's second money flow
+
+					<BR>�2 = Slope of the line X3
+
+					<BR>X2 =
+
+					Yesterday's third money flow
+
+					<BR>�2 = Slope of the line X4
+
+					<BR>X2 = Yesterday's fourth money flow
+
+					<BR>�2 = Slope of the line X5
+
+					<BR>X2 =
+
+					Yesterday's fifth money flow
+
+					<BR>e = random error
+
+					component</P>
+
+
+
+
+
+	</body></html>
+

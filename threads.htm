@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>Webster Systems</title>
+<META NAME="Keywords" Content="information systems and management consultancy rupert st john webster">
+<META NAME="Description" Content="Webster Systems is an information systems consultancy specialising
+in applications development and support on Wintel and Lintel platforms over Oracle and SQL Server
+databases using C, C++, C#, SQL, PL/SQL, T-SQL, Java, VB, ASP, ADO, COM, Visual Studio, Vi, SCCS, 
+Perl, HTML, VBScript, Javascript, UNIX Script, Windows Script. We aggressively pursue the latest 
+technology developments and comprehensively assess their value to existing systems.">
+
+<base target="_self">
+<link rel="stylesheet" href="base.css">
+
+</head>
+
+<body>
+
+<!--#exec cgi="cgi-bin/mktcount.cgi"-->
+
+<center><img border="0" src="computer2.gif" align="middle" alt="Playing the game"></img></center>
+<p><center><b>A treatise on threads and threading</b></center></font>
+<p>
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One way to achieve low latency computation is matching binary patterns directly. Data packets are routed to a listener which compares the sequence of bits in the packet to pre-defined bit patterns, then decides what to do as a result of a match. The whole process takes place in the L1 cache, in other words nothing is stored in main memory.
+<p align=justify>
+<center><img border="0" src="l1cache.jpg" align="middle" alt="L1 cache"></img></center>
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It means that a good place to start looking at thread cost and performance is with CPU registers, execution units, memory buffers, L1, L2 and L3 (or other future) CPU caches, main memory, and sockets to clustered CPU's relate together. What are all the primitives used to manage threads? Take the <i>volatile</i> keyword: it's purpose is a synchronised read. It tells the CPU to wait for x clock cycles - for as long as execution core memory buffers take to empty to the shared L3 cache - so all CPU's can see the latest copy of the data. It works where several threads use several cores, in other words CPU 1 data isn't yet synchronized with CPU 2 data, and so on. That's all about cache coherence.
+<p align=justify>
+<center><img border="0" src="cpu.jpg" align="middle" alt="CPU registers, execution units, buffers and caches"></img></center>
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sticking with <i>volatile</i> for a while, the way that an L3 cache flush actually takes place is through the use of memory fences (or barriers). A <b>store</b> fence waits for all store (write) buffers to empty so the data becomes visible to all CPU cores. A <b>load</b> fence waits for all load (read) buffers to drain. A <b>full</b> memory barrier is a composite of store and load fences, ie ensuring all buffers drain before executing CPU instructions. In Java, <i>volatile</i> data orders a load fence before a read, and a store fence after a write. 
+<p align=justify>
+<center><img border="0" src="barrier.jpg" align="middle" alt="store, load and full memory barriers"></img></center>
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the Java Memory Model, a <i>final</i> variable requests a store fence after initialisation.
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When a lock is placed on an object, what happens is a <b>full</b> barrier is employed around the lock to block the memory sub system across cores, and even across CPU's. Thus, visibility and program order is preserved. But, the cost is waiting for each execution core's memory buffers to drain. Maximum performance is obtained by modelling the algorithm required to have necessary memory fences occur at the boundaries before and after the work unit is completed. According to <a href="http://norvig.com/21-days.html#answers">Norvig</a> locking or unlocking a mutex lock takes a modern CPU approx 25 ns.
+
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Given that CPU use requires memory fences whatever happens, then probably the simplest way to do thread programming is only to use locks on objects. A bit like the days of C coding and database locks. Consider that thread primitives like <i>volatile</i> are architecture dependent, and hard to model or debug making for very difficult software maintenance. To minimise long term maintenance costs it's easier to just use locks in multi-threaded code. In other words:
+<p align=justify>
+<center><img border="0" src="lock.jpg" align="middle" alt="Simple lock"></img></center>
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;But even then a lock on an object in a thread doesn't prevent the OS scheduling other threads to run on the same core. If your estimated wait time is under a millisecond then a spinlock prevents this. Then for example, the OS won't assign out the core to the kernel, which assignment means context switches (where all CPU registers are emptied to the L3 cache, opposed to a lock on just one CPU register). For more investigation, see: <a href="http://stackoverflow.com/questions/1456225/spinlocks-how-much-useful-are-they?lq=1" target="_blank">Stack Overflow on spinlocks</a>. A textbook example of a spinlock is: 
+<p align=justify>
+<center><img border="0" src="spinlock.jpg" align="middle" alt="CPU spin lock"></img></center>
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Considering instruction cycles and latency, see the following picture from Mechanical Sympathy, showing estimated timings to access CPU registers, caches, the motherboard network (for now?) and main memory, showing that the <a href="http://en.wikipedia.org/wiki/Intel_QuickPath_Interconnect">QPI bus</a> is faster than the bus to main memory.
+<p align=justify>
+<center><img border="0" src="cycle_times.jpg" align="middle" alt="Cycle times"></img></center>
+<p align=justify> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, since memory fetch times increase between successive CPU caches and main memory, then per the binary pattern matching the most efficient use of the CPU is through the L1 cache. The way this is done is tricky because "CPU cache is not addressable". Several techniques exist to achieve the same end including spatial locality (see <a href="http://stackoverflow.com/questions/763262/how-does-one-write-code-that-best-utilizes-the-cpu-cache-to-improve-performance">CPU cache coding</a>) and pre-fetching, see <a href="http://gcc.gnu.org/onlinedocs/gcc-3.3.6/gcc/Other-Builtins.html">__builtin_prefetch</a>
+<p align=justify>
+<p align=justify> References: <a href="http://uk.linkedin.com/pub/malcolm-brown/0/819/446/" target="_blank">Malcolm Brown</a>, <a href="http://mechanical-sympathy.blogspot.co.uk/">Mechanical Sympathy</a>
+
+<p align=justify>Tell me what you think, please <b><a href="mailto:rupert@webstersystems.co.uk">get in touch</a></b>! 
+</body></html>
